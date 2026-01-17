@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- JS flag pour éviter de cacher le site si JS ne s'exécute pas -->
   <script>document.documentElement.classList.add('js');</script>
@@ -13,6 +15,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/og-cover.jpg" />
 
+  <!-- (Optionnel mais recommandé) -->
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -22,6 +27,9 @@
 </head>
 
 <body>
+  <!-- ✅ Ancre haut de page (plus propre ici) -->
+  <span id="top" aria-hidden="true"></span>
+
   <a class="skip" href="#contenu">Aller au contenu</a>
 
   <noscript>
@@ -64,8 +72,7 @@
   <main id="contenu">
     <!-- ✅ PRESTATIONS EN PREMIER -->
     <section class="section" id="prestations" aria-label="Prestations">
-      <!-- ✅ ancre haut de page conservée -->
-      <span id="top" class="anchor-top" aria-hidden="true"></span>
+      <!-- (si tu gardes l’offset sticky header via CSS, pas besoin d’une 2e ancre ici) -->
 
       <div class="container">
         <div class="svcLayout">
@@ -81,7 +88,7 @@
                 <figure class="svcRail__item"><img src="assets/images/lashes-01.jpg" alt="" loading="lazy" width="1223" height="1169" decoding="async"></figure>
                 <figure class="svcRail__item"><img src="assets/images/lashes-02.jpg" alt="" loading="lazy" width="960" height="958" decoding="async"></figure>
 
-                <!-- set 2 (duplication pour boucle parfaite) -->
+                <!-- set 2 -->
                 <figure class="svcRail__item"><img src="assets/images/nails-01.jpg" alt="" loading="lazy" width="1536" height="2048" decoding="async"></figure>
                 <figure class="svcRail__item"><img src="assets/images/nails-02.jpg" alt="" loading="lazy" width="1536" height="2048" decoding="async"></figure>
                 <figure class="svcRail__item"><img src="assets/images/nails-03.jpg" alt="" loading="lazy" width="1536" height="2048" decoding="async"></figure>
@@ -235,7 +242,9 @@
 
         <div class="gallery__note reveal">
           <p class="muted">Astuce : envoyez une inspiration via WhatsApp — je vous propose une version adaptée à votre main et à votre quotidien.</p>
-          <a class="btn btn--ghost" href="https://www.instagram.com/manon_la_main_dor" target="_blank" rel="no<headner">Instagram @manon_la_main_dor →</a>
+          <a class="btn btn--ghost" href="https://www.instagram.com/manon_la_main_dor" target="_blank" rel="noopener noreferrer">
+            Instagram @manon_la_main_dor →
+          </a>
         </div>
       </div>
     </section>
@@ -375,11 +384,5 @@
   </div>
 
   <script src="js/main.js" defer></script>
-
-  <noscript>
-    <div style="padding:16px;max-width:1140px;margin:0 auto;color:#fff;">
-      Ce site fonctionne sans JavaScript, mais certaines fonctionnalités (filtres, lightbox) seront désactivées.
-    </div>
-  </noscript>
 </body>
 </html>
